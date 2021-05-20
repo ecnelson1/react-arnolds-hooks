@@ -13,3 +13,9 @@ exports[`DetailsContainer renders a character from Hey Arnold by matching id 1`]
   </figcaption>
 </figure>
 `;
+
+exports[`DetailsContainer renders a loading element 1`] = `
+<h1>
+  LOADING...
+</h1>
+`;

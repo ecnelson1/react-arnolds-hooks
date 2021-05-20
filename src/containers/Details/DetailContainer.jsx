@@ -5,7 +5,7 @@ import { useCharacter } from '../../hooks/character-hook';
 
 
 const DetailsContainer = ({match}) => {
-    const [loading, character] = useCharacter(match.params.is);
+    const [loading, character] = useCharacter(match.params.id);
     
          return (
             <div>

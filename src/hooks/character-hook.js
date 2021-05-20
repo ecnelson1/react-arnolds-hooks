@@ -1,14 +1,14 @@
 import {useEffect, useState} from 'react';
 import {characterById } from '../Services/api-utils';
 
-export const useCharacter = () => {
+export const useCharacter = (id) => {
     const[loading, setLoading] = useState(true);
     const [character, setCharacter] = useState({});
-
+ 
     useEffect(()=> {
-        characterById()
+        characterById(id)
         .then((character) => setCharacter(character))
         .finally(()=> setLoading(false));
-    });
+    },[]);
     return [loading, character];
 };

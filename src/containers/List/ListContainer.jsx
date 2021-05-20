@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import CharacterList from '../../components/Character/CharacterList';
-import { allCharacters } from '../../Services/api-utils';
+import { useCharacters } from '../../hooks/characters-hook';
+
 
 
 const ListContainer = () =>  {
-
-    const [loading, setLoading] = useState(true);
-    const [characters, setCharacters] = useState([]);
-
-    useEffect(() => {
-        allCharacters()
-        .then(setCharacters)
-        .finally(()=> setLoading(false));
-        
-    },[])
-
-    if (loading) return <h1>LOADING...</h1>;
+    const[loading, characters] = useCharacters();
 
         return (
             <div>
-                <CharacterList characters={characters} />
+                {loading ? (<h1>LOADING...</h1>)
+                :(<CharacterList characters={characters}/>)}
+                
             </div>
         );
         };

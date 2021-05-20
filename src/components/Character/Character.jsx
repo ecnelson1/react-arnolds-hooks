@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {useHistory} from 'react-router-dom'
 
-function Character ({id, name, image}) {
+const Character = ({name, image, _id}) => {
     let history = useHistory();
     const handleClick = () => {
-        history.push(`/${id}`)
-        history.go(`/${id}`)
+        history.push(`/${_id}`)
+        history.go(`/${_id}`)
     }
     return (
         <figure aria-label='character'>
